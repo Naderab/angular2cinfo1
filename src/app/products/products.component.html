@@ -1,6 +1,5 @@
-<p>products works!</p>
 {{title}}
-<table>
+<!--<table>
 
     <tr *ngFor="let p of products">
         <td>{{p.id}}</td>
@@ -15,9 +14,16 @@
         
     </tr>
 </table>
-
+-->
 <div class="container">
     <div class="row">
+        <form>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Search :</label>
+              <input type="text" class="form-control" name="search" [(ngModel)]="search">
+            </div>
+            <button class="btn btn-primary" (click)="searchProduct()">Search</button>
+        </form>
         <div class="col-4" *ngFor="let p of products">
             <div class="card" style="width: 18rem;">
                 <img src={{p.picture}} class="card-img-top" alt="...">

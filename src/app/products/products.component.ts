@@ -9,6 +9,7 @@ import { Product } from '../core/product';
 export class ProductsComponent implements OnInit {
   title : string = "Welcome to products page"
   products : Product[] =[]
+  search:string=''
   constructor() { 
   }
 
@@ -28,6 +29,10 @@ export class ProductsComponent implements OnInit {
   }
   LikeProduct(yyyy:number){
     this.products.map((x)=>x.id == yyyy && x.like++)
+  }
+
+  searchProduct(){
+    this.products = this.products.filter((product)=>product.title.match(this.search));
   }
 
 }
