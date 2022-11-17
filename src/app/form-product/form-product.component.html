@@ -1,1 +1,29 @@
-<p>form-product works!</p>
+<form #varform="ngForm" name="form" (ngSubmit)="Submit()">
+    <div class="mb-3">
+      <label class="form-label">Title</label>
+      <input type="text" class="form-control" name="title" 
+      #vartitle="ngModel" [(ngModel)]="product.title" required minlength="3">
+      <div *ngIf="vartitle.touched && vartitle.invalid">  
+      <div *ngIf="vartitle.errors?.['required']">Title is required</div>
+    <div *ngIf="vartitle.errors?.['minlength']">Title must have at least 3 characters</div>
+    </div>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Price</label>
+      <input type="number" class="form-control" name="price" [(ngModel)]="product.price">
+    </div>
+    <div class="mb-3">
+        <label  class="form-label">Quantity</label>
+        <input type="number" class="form-control" name="quantity" [(ngModel)]="product.quantity">
+    </div>
+    <div class="mb-3">
+        <label  class="form-label">Picture</label>
+        <input type="text" class="form-control" name="picture" [(ngModel)]="product.picture">
+    </div>
+   
+    <button type="submit" class="btn btn-primary" [disabled]="varform.invalid">Submit</button>
+  </form>
+  {{product.title}}
+  {{product.price}}
+  {{product.quantity}}
+  {{product.picture}}
