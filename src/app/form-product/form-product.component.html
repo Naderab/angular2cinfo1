@@ -10,16 +10,28 @@
     </div>
     <div class="mb-3">
       <label class="form-label">Price</label>
-      <input type="number" class="form-control" name="price" [(ngModel)]="product.price">
+      <input type="number" class="form-control" #varprice="ngModel" name="price" [(ngModel)]="product.price" required min="0">
+      <div *ngIf="varprice.touched && varprice.invalid">  
+        <div *ngIf="varprice.errors?.['required']">Price is required</div>
+      <div *ngIf="varprice.errors?.['min']">Price must be positive</div>
+      </div>
     </div>
     <div class="mb-3">
         <label  class="form-label">Quantity</label>
-        <input type="number" class="form-control" name="quantity" [(ngModel)]="product.quantity">
-    </div>
+        <input type="number" class="form-control" #varquantity="ngModel" name="quantity" [(ngModel)]="product.quantity" required min="0">
+        <div *ngIf="varquantity.touched && varquantity.invalid">  
+          <div *ngIf="varquantity.errors?.['required']">Quantity is required</div>
+        <div *ngIf="varquantity.errors?.['min']">Quantity must be positive</div>
+        </div>
+      </div>
     <div class="mb-3">
         <label  class="form-label">Picture</label>
-        <input type="text" class="form-control" name="picture" [(ngModel)]="product.picture">
-    </div>
+        <input type="text" class="form-control" #varpicture="ngModel" name="picture" [(ngModel)]="product.picture" required>
+        <div *ngIf="varpicture.touched && varpicture.invalid">  
+          <div >Picture is required</div>
+        </div>
+      
+      </div>
    
     <button type="submit" class="btn btn-primary" [disabled]="varform.invalid">Submit</button>
   </form>

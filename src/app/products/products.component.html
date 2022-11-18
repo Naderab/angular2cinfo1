@@ -34,7 +34,9 @@
                   <p class="card-text">Like : {{p.like}}</p>
                   <button class="btn btn-outline-success" (click)="BuyProduct(p.id)" [disabled]="p.quantity == 0">Buy</button>
                   <button class="btn btn-outline-success" (click)="LikeProduct(p.id)" >Like</button>                </div>
-              </div>
+                  <button class="btn btn-outline-success" [routerLink]="['/product',p.id]" >Details</button>                
+
+                </div>
         </div>
     </div>
 </div>
