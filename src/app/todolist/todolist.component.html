@@ -1,0 +1,21 @@
+<p>todolist works!</p>
+
+<div class=" container">
+<div class="row">
+    <div class="col-4" *ngFor="let x of todolist">
+        <div
+        class="card" style="width: 18rem;">
+           <div class="card-body">
+             <h5 class="card-title"> {{x.title}}</h5>
+             <h5 class="card-title"> {{x.id}}</h5>
+             <h5 class="card-title"> {{x.userId}}</h5>
+             <h5 class="card-title"> {{x.completed}}</h5>
+
+            
+           </div>
+         </div>
+    </div>
+    <a class="btn btn-primary" (click)="FunctionBilan()">Bilan</a>
+    {{Res}}
+</div>
+

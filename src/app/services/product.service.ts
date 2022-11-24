@@ -17,4 +17,6 @@ export class ProductService {
     console.log(id)
     return this.products.filter((p)=>p.id == id)[0]
   }
+
+  
 }

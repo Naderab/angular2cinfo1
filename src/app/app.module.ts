@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { FormProductComponent } from './form-product/form-product.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { DetailsProductComponent } from './details-product/details-product.component';
+import { TodolistComponent } from './todolist/todolist.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { DetailsProductComponent } from './details-product/details-product.compo
     FooterComponent,
     FormProductComponent,
     NotFoundComponent,
-    DetailsProductComponent
+    DetailsProductComponent,
+    TodolistComponent
   ],
   imports: [
     BrowserModule,
