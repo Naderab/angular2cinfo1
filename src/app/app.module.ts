@@ -11,7 +11,8 @@ import { FormProductComponent } from './form-product/form-product.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { DetailsProductComponent } from './details-product/details-product.component';
 import { TodolistComponent } from './todolist/todolist.component';
-
+import { XComponent } from './x/x.component';
+import {HttpClientModule} from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -22,12 +23,14 @@ import { TodolistComponent } from './todolist/todolist.component';
     FormProductComponent,
     NotFoundComponent,
     DetailsProductComponent,
-    TodolistComponent
+    TodolistComponent,
+    XComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
