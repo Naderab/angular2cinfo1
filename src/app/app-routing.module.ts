@@ -12,8 +12,8 @@ const routes: Routes = [
   {path:'addProduct',component: FormProductComponent},
   {path:'product/:id',component: DetailsProductComponent},
   {path:'Todoroot',component: TodolistComponent},
+  {path:'updateProduct/:id',component: FormProductComponent},
   {path:'x',component: XComponent},
-
   {path:'**',component:NotFoundComponent}
 ];
 

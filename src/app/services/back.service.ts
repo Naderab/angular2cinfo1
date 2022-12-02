@@ -26,4 +26,9 @@ export class BackService {
     return this.http.put(this.productUrl+"/"+p.id,p)
   }
 
+  getById(id:number){
+    return this.http.get<Product>(this.productUrl+"/"+id)
+
+  }
+
 }
